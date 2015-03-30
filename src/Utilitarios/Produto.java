@@ -9,10 +9,17 @@ package Utilitarios;
  *
  * @author Jéssica
  */
-public class Produtos {
+public class Produto {
     private String nome;
     private int quantidade;
     private double preço;
+    
+    public Produto(String nome, double preço)
+    {
+        this.nome = nome;
+        this.preço = preço;
+        quantidade = 1;
+    }
     
     public String getnome(){
         return nome;

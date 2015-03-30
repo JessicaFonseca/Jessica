@@ -17,15 +17,13 @@ import java.util.logging.Logger;
  * @author Jéssica
  */
 public class Lista {
-    public List preencherLista(ResultSet rs){
-        List ls = new ArrayList();
+    public List<Produto> preencherLista(ResultSet rs){
+        List<Produto> ls = new ArrayList<Produto>();
         try {
             rs.beforeFirst();
             while(rs.next()){
-                Produtos produto = new Produtos();
-                produto.setnome(rs.getString("nome"));
+                Produto produto = new Produto(rs.getString("nome"), rs.getDouble("preço"));
                 produto.setquantidade(rs.getInt("quantidade"));
-                produto.setpreço(rs.getDouble("preço"));
                 ls.add(produto);
             }
         } catch (SQLException ex) {
