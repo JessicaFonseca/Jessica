@@ -5,7 +5,7 @@
  */
 package Formularios;
 
-import Utilitários.ConexaoDB;
+import Utilitarios.ConexaoDB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -136,14 +136,17 @@ Menu frame=new Menu();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nome,password;
+        char[] pass;
         nome=jTextField1.getText();
-        password=jPasswordField1.getText();
-        if (nome.equals("") || password.equals ("")){
+        pass=jPasswordField1.getPassword();
+        password = String.valueOf(pass);
+        if (nome.equals("") || password.equals("")){
             JOptionPane.showMessageDialog (null, "É obrigatório preencher todos os campos");
         }
-        else
-        frame.setVisible(true);
-    this.dispose();
+        else {
+            frame.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
