@@ -6,8 +6,8 @@
 package Formularios;
 
 import Utilitarios.ConexaoDB;
+import Utilitarios.Produto;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -921,379 +921,103 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String nome="Super Bock";
-        double preco=2;
-        int validacao=0;
-        int quantidade=1;
+    private void adicionarTabela(Produto produto)
+    {
+        boolean validacao = false;
+        
         if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2);  
+            modelo.addRow(new Object[]{produto.getnome(),1});
+               modelo.setValueAt(produto.getpreço(), 0, 2);  
         }
         else {
             for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);
-                    validacao=1;
+                if (jTable1.getValueAt(i, 0).toString().equals(produto.getnome())) {
+                    produto.setquantidade(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1);
+                    modelo.setValueAt(produto.getquantidade(), i, 1);
+                    modelo.setValueAt(produto.getpreço(), i, 2);
+                    validacao=true;
                 } 
             }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, jTable1.getRowCount(), 2);
-}
+            if (validacao == false) {
+                modelo.addRow(new Object[]{produto.getnome(),1});
+                modelo.setValueAt(produto.getpreço(), jTable1.getRowCount()-1, 2);
+            }
         }
+    }
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Produto prod = new Produto("Super Bock",2);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nome="Adega da Borga";
-        double preco=5;
-        int validacao=0;
-        int quantidade=1;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, jTable1.getRowCount(), 2);
-}
-        }
+        Produto prod = new Produto("Adega da Borga",5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String nome="Cabeça de Burro";
-        double preco=6;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Cabeça de Burro",6);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      String nome="Murganheira";
-        double preco=15;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+      Produto prod = new Produto("Murganheira",15);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        String nome="Mateus";
-        double preco=7.;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Mateus",7);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       String nome="Muralhas";
-        double preco=8;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Muralhas",8);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       String nome="Casal Garcia";
-        double preco=7;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Casal Garcia",7);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       String nome="Coca-Cola";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Coca-Cola",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-      String nome="Ice Tea";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+      Produto prod = new Produto("Ice Tea",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-      String nome="7up";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+      Produto prod = new Produto("7up",1.5);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-       String nome="Sumol";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Sumol",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-       String nome="Água";
-        double preco=1.00;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Água",1);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-       String nome="Guaraná";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Guaraná",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-       String nome="Fanta";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Fanta",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-     String nome="Compal";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+     Produto prod = new Produto("Compal",1.5);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -1308,524 +1032,118 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-         String nome="Sopa de Marisco";
-        double preco=2.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+         Produto prod = new Produto("Sopa de Marisco",2.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-            String nome="Sopa de Legumes";
-        double preco=1.50;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+         Produto prod = new Produto("Sopa de Legumes",1.5);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-           String nome="Plumas de Porco Dose";
-        double preco=12;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Plumas de Porco Dose",12);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-           String nome="Posta Mirandesa Dose";
-        double preco=12;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+         Produto prod = new Produto("Posta Mirandesa Dose",12);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        String nome="Gambas Fritas";
-        double preco=7;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Gambas Fritas",7);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-       String nome="Lapas";
-        double preco=5;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Lapas",5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        String nome="Ostras";
-        double preco=7.5;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Ostras",7.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-       String nome="Salmão Fumado";
-        double preco=7.5;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Salmão Fumado",7.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        String nome="Ameijoas";
-        double preco=6;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Ameijoas",6);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        String nome="Cocktail de Marisco";
-        double preco=5;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Cocktail de Marisco",5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        String nome="Sorbet de Limão";
-        double preco=2;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Sorbet de Limão",2);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-       String nome="Pudim Flan";
-        double preco=1.5;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+       Produto prod = new Produto("Pudim Flan",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        String nome="Cheesecake";
-        double preco=1.5;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Cheesecake",1.5);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        String nome="Mousse de Chocolate";
-        double preco=2;// preco tem de ter valor , secalhar obtido da base de dados mas este ta aqui para teste
-        int validacao=0;
-        int quantidade=1;//quantidade é importante manter em runtime para poderes multiplicar pelo preço
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-               modelo.setValueAt(preco, 0, 2); //trata-se da 1 vez que a linha entra na lista o preço tem quantidade 1 
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    quantidade=Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1;
-                    modelo.setValueAt(quantidade, i, 1);
-                    modelo.setValueAt(preco*quantidade, i, 2);//actualiza o preço consoante as quantidades que adicionamos
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-                modelo.setValueAt(preco, 0, 2);// tambem se trata da 1 vez que a linha entra na lista o preço tem quantidade 1 
-            }
-        }
+        Produto prod = new Produto("Mousse de Chocolate",2);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-       String nome="Bifinhos com Cogumelos";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+       Produto prod = new Produto("Bifinhos com Cogumelos",8);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        String nome="Bitoque";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+        Produto prod = new Produto("Bitoque",8);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        String nome="Bacalhau á Lagareiro";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+        Produto prod = new Produto("Bacalhau á Lagareiro",8);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-       String nome="Dourada Grelhada";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+       Produto prod = new Produto("Dourada Grelhada",8);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-      String nome="Filetes de Peixe";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+      Produto prod = new Produto("Filetes de Peixe",8);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton36ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-       String nome="Lulas Grelhadas";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+       Produto prod = new Produto("Lulas Grelhadas",8);
+       adicionarTabela(prod);
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
-        String nome="Arroz de Marisco";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+        Produto prod = new Produto("Arroz de Marisco",8);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
-       String nome="Feijoada de Marisco";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+       Produto prod = new Produto("Feijoada de Marisco",8);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
-        String nome="Café";
-        int validacao=0;
-        if (jTable1.getRowCount()==0) {
-            modelo.addRow(new Object[]{nome,1});
-        }
-        else {
-            for (int i=0;i<jTable1.getRowCount();i++) {
-                if (jTable1.getValueAt(i, 0).toString().equals(nome)) {
-                    modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1, i, 1);
-                    validacao=1;
-                } 
-            }
-            if (validacao==0) {
-                modelo.addRow(new Object[]{nome,1});
-            }
-        }
+        Produto prod = new Produto("Café",1.2);
+        adicionarTabela(prod);
     }//GEN-LAST:event_jButton40ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

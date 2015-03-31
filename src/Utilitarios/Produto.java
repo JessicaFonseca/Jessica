@@ -34,7 +34,7 @@ public class Produto {
         this.quantidade=quantidade;
     }
     public double getpreço(){
-        return preço;
+        return preço*quantidade;
     }
     public void setpreço(double preço){
         this.preço=preço;
