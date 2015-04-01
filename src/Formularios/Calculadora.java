@@ -14,7 +14,7 @@ public class Calculadora extends javax.swing.JFrame {
     private String valor = "";
     private double numero;
     private boolean ponto = false;
-    private static javax.swing.JTextField valorTextField2;
+    
     /**
      * Creates new form Calculadora
      * @param numero O valor da conta
@@ -24,7 +24,6 @@ public class Calculadora extends javax.swing.JFrame {
         this.numero = numero;
         valorTextField.setText("0");
         trocoTextField.setText("0");
-        valorTextField2 = valorTextField;
     }
     
     public Calculadora() {
@@ -352,8 +351,8 @@ public class Calculadora extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Calculadora().setVisible(true);
-                valorTextField2.grabFocus();
-                valorTextField2.requestFocus();
+                valorTextField.grabFocus();
+                valorTextField.requestFocus();
             }
         });
     }
@@ -374,6 +373,6 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField trocoTextField;
-    private javax.swing.JTextField valorTextField;
+    private static javax.swing.JTextField valorTextField;
     // End of variables declaration//GEN-END:variables
 }
