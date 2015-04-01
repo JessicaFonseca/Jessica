@@ -22,14 +22,14 @@ public class Calculadora extends javax.swing.JFrame {
     public Calculadora(double numero) {
         initComponents();
         this.numero = numero;
-        valorTextField.setText("0");
+        valorTextField.setText("");
         trocoTextField.setText("0");
     }
     
     public Calculadora() {
         initComponents();
         numero = 0;
-        valorTextField.setText("0");
+        valorTextField.setText("");
         trocoTextField.setText("0");
     }
 
@@ -59,7 +59,7 @@ public class Calculadora extends javax.swing.JFrame {
         botao0 = new javax.swing.JButton();
         botaoPonto = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel4.setText("Valor:");
 
@@ -265,8 +265,9 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void botaoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOKActionPerformed
         // TODO add your handling code here:
+        valor = valorTextField.getText();
         if(!valor.equals(""))
-            trocoTextField.setText(String.valueOf(numero - Double.parseDouble(valor)));
+            trocoTextField.setText(String.valueOf(Double.parseDouble(valor) - numero));
     }//GEN-LAST:event_botaoOKActionPerformed
 
     private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed

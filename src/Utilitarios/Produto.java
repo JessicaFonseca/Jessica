@@ -39,4 +39,7 @@ public class Produto {
     public void setpreço(double preço){
         this.preço=preço;
     }
+    public double getpreçoUnidade() {
+        return preço;
+    }
 }
