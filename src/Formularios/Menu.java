@@ -9,6 +9,9 @@ import Utilitarios.ConexaoDB;
 import Utilitarios.Produto;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
+import java.util.List;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +22,7 @@ public class Menu extends javax.swing.JFrame {
     ConexaoDB conexao = new ConexaoDB();
     ResultSet rs;
     double total=0;
+    List<Produto> listaDeProdutos = new ArrayList<Produto>();
     
     /**
      * Creates new form Menu
@@ -945,7 +949,8 @@ public class Menu extends javax.swing.JFrame {
         else {
             for (int i=0;i<jTable1.getRowCount();i++) {
                 if (jTable1.getValueAt(i, 0).toString().equals(produto.getnome())) {
-                    produto.setquantidade(Integer.parseInt(jTable1.getValueAt(i, 1).toString())+1);
+                    produto = procuraProduto(produto.getnome());
+                    produto.incquantidade();
                     modelo.setValueAt(produto.getquantidade(), i, 1);
                     modelo.setValueAt(produto.getpreço(), i, 2);
                     validacao=true;
@@ -958,6 +963,17 @@ public class Menu extends javax.swing.JFrame {
         }
         total += produto.getpreçoUnidade();
         totalTextField.setText(String.valueOf(total));
+        if(validacao == false) {
+            listaDeProdutos.add(produto);
+        }
+    }
+    
+    private Produto procuraProduto(String nome) {
+        for(Produto prod : listaDeProdutos) {
+            if(prod.getnome().equals(nome))
+                return prod;
+        }
+        return null;
     }
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1037,11 +1053,15 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         int r = jTable1.getSelectedRow();
+        Produto produto = procuraProduto(jTable1.getValueAt(r, 0).toString());
+        produto.decquantidade();
         if (jTable1.getRowCount()!=0) {
             if (Integer.parseInt(jTable1.getValueAt(r, 1).toString())==1) {
                modelo.removeRow(r);
+               listaDeProdutos.remove(produto);
            } else {
-               modelo.setValueAt(Integer.parseInt(jTable1.getValueAt(r, 1).toString())-1, r, 1);
+               modelo.setValueAt(produto.getquantidade(), r, 1);
+               modelo.setValueAt(produto.getpreço(), r, 2);
            } 
         }
     }//GEN-LAST:event_jButton17ActionPerformed

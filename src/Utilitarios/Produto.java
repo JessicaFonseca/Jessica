@@ -42,4 +42,10 @@ public class Produto {
     public double getpreçoUnidade() {
         return preço;
     }
+    public void incquantidade() {
+        this.quantidade++;
+    }
+    public void decquantidade() {
+        this.quantidade--;
+    }
 }
