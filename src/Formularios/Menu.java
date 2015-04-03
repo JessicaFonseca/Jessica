@@ -889,6 +889,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/novo.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/off.png"))); // NOI18N
         jButton43.addActionListener(new java.awt.event.ActionListener() {
@@ -978,16 +983,9 @@ public class Menu extends javax.swing.JFrame {
         if(validacao == false) {
             listaDeProdutos.add(produto);
         }
-    
-        int r = jTable1.getSelectedRow();
-        if (jTable1.getRowCount()!=0) {
-            if (Integer.parseInt(jTable1.getValueAt(r, 1).toString())==1) 
-                if(validacao == false) {
-                modelo.removeRow(r);
-               listaDeProdutos.remove(produto);
-           }
-        }
-        }
+        
+    }
+   
     
     private Produto procuraProduto(String nome) {
         for(Produto prod : listaDeProdutos) {
@@ -1084,6 +1082,9 @@ public class Menu extends javax.swing.JFrame {
                modelo.setValueAt(produto.getquantidade(), r, 1);
                modelo.setValueAt(produto.getpreço(), r, 2);
            } 
+            total -= produto.getpreçoUnidade();
+            totalTextField.setText(String.valueOf(total));
+        
         }
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -1198,7 +1199,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
-        Produto prod = new Produto("Café",1.2);
+        Produto prod = new Produto("Café",0.8);
         adicionarTabela(prod);
     }//GEN-LAST:event_jButton40ActionPerformed
 
@@ -1212,7 +1213,6 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton42ActionPerformed
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-
         Calculadora calc = new Calculadora(total);
         calc.setVisible(true);
     }//GEN-LAST:event_jButton41ActionPerformed
@@ -1220,6 +1220,10 @@ public class Menu extends javax.swing.JFrame {
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
        this.dispose();
     }//GEN-LAST:event_jButton43ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
