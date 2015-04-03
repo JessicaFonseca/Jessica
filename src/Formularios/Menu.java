@@ -996,6 +996,7 @@ public class Menu extends javax.swing.JFrame {
     }
     
     private void limpaTabela() {
+       totalTextField.setText("");
        while(jTable1.getRowCount()!=0){
            modelo.removeRow(0);  
     }
