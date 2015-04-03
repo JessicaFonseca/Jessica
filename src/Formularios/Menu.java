@@ -994,7 +994,13 @@ public class Menu extends javax.swing.JFrame {
         }
         return null;
     }
-
+    
+    private void limpaTabela() {
+       while(jTable1.getRowCount()!=0){
+           modelo.removeRow(0);  
+    }
+        listaDeProdutos.clear(); 
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Produto prod = new Produto("Super Bock",2);
         adicionarTabela(prod);
@@ -1222,7 +1228,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton43ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    limpaTabela();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

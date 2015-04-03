@@ -1,6 +1,7 @@
 package Utilitarios;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,6 +40,48 @@ public class ConexaoDB {
             JOptionPane.showMessageDialog(null, "Erro ao fechar a conexão: "+ex);
         }
     }
+    
+      public void CriaTabelaRegistos () {
+    boolean a=tableExists();   
+    if(!tableExists())  {
+   Statement stmt = null;
+         
+    
+    try {
+ 
+      stmt = cn.createStatement();
+     
+                 String sql="CREATE TABLE  Registos " +
+                   "(ID INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
+                   " produto VARCHAR(255), " + 
+                   " quantidade VARCHAR(255), " + 
+                   " total VARCHAR(255))";
+
+      stmt.executeUpdate(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+}
+
+private boolean tableExists(){
+   try{
+  
+
+    DatabaseMetaData dbmd = cn.getMetaData();
+     rs = dbmd.getTables(null, null, "REGISTOS", null);
+
+if(rs.next()){return true;}
+else{return false;}
+
+
+   }catch(Exception a){
+       System.out.println("Erro");
+       return false;
+   }
+  
+}
+
     public void update(String query){
         try {
             st = cn.createStatement();
@@ -68,19 +111,7 @@ public class ConexaoDB {
         }
         return rs;
     }
-
-public ResultSet VerificaLogin (String nome, String password){
-        try {
-            String query="select * from Jessica.Login where nome=? and password=?";
-            pst=cn.prepareStatement (query);
-            pst.setString (1, nome);
-            pst.setString (2, password);
-            rs=pst.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return rs;
-}
+   
 
 public ResultSet ExportarFactura(String nome, int quantidade, double preco){
         

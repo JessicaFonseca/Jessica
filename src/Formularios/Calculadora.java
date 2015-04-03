@@ -60,9 +60,12 @@ public class Calculadora extends javax.swing.JFrame {
         botaoPonto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Calculadora");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Valor:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Troco:");
 
         valorTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +76,9 @@ public class Calculadora extends javax.swing.JFrame {
 
         trocoTextField.setEditable(false);
 
+        botaoOK.setBackground(new java.awt.Color(255, 255, 255));
+        botaoOK.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botaoOK.setForeground(new java.awt.Color(0, 51, 255));
         botaoOK.setText("OK");
         botaoOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +86,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao1.setText("1");
         botao1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +94,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao2.setText("2");
         botao2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +102,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao3.setText("3");
         botao3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +110,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao4.setText("4");
         botao4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +118,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao5.setText("5");
         botao5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +126,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao6.setText("6");
         botao6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +134,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao7.setText("7");
         botao7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +142,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao8.setText("8");
         botao8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +150,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao9.setText("9");
         botao9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +158,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botao0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botao0.setText("0");
         botao0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +166,7 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
+        botaoPonto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botaoPonto.setText(".");
         botaoPonto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,41 +180,45 @@ public class Calculadora extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botao5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botao6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botao7)
-                        .addGap(18, 18, 18)
-                        .addComponent(botao8))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botao5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botao6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botao7)
+                                .addGap(18, 18, 18)
+                                .addComponent(botao8))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botao1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botao2)
+                                .addGap(18, 18, 18)
+                                .addComponent(botao3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botao4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botao9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botao0)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botaoPonto)
+                                .addGap(18, 18, 18)
+                                .addComponent(botaoOK)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botao1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botao2)
-                        .addGap(18, 18, 18)
-                        .addComponent(botao3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(trocoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botao9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botao0)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botaoPonto)
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoOK)))
-                .addContainerGap(204, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(trocoTextField))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(196, 196, 196))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,12 +242,12 @@ public class Calculadora extends javax.swing.JFrame {
                     .addComponent(botao7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botao8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botao5, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                        .addComponent(botao5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botao6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botao0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botao9, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(botao9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoPonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(136, 136, 136))
