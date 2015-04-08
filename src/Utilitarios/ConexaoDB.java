@@ -111,6 +111,18 @@ else{return false;}
         }
         return rs;
     }
+    public ResultSet verificaLogin(String nome,String pass){
+        try {
+            String query="select * from Jessica.Login where nome=? and pass=?";
+            pst=cn.prepareStatement(query);
+            pst.setString(1, nome);
+            pst.setString(2, pass);
+            rs=pst.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(Utilitários.ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
    
 
 public ResultSet ExportarFactura(String nome, int quantidade, double preco){

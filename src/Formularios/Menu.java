@@ -125,8 +125,11 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu");
+        setBackground(new java.awt.Color(204, 204, 204));
 
-        jTabbedPane1.setBackground(new java.awt.Color(102, 102, 102));
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setForeground(new java.awt.Color(204, 0, 0));
+        jTabbedPane1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -137,7 +140,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 0, 0));
         jLabel4.setText("Gambas Fritas");
 
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/2.jpg"))); // NOI18N
@@ -155,7 +159,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("Lapas");
 
         jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/4.jpg"))); // NOI18N
@@ -166,10 +171,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 0, 0));
         jLabel8.setText("Cocktail de marisco");
 
-        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 0, 0));
         jLabel9.setText("Ostras");
 
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/5.jpg"))); // NOI18N
@@ -179,7 +186,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
         jLabel7.setText("Salmão Fumado");
 
         jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/6.jpg"))); // NOI18N
@@ -190,7 +198,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 0, 0));
         jLabel10.setText("Ameijoas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -230,7 +239,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addGap(162, 162, 162)
                         .addComponent(jLabel10)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +264,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jLabel7)
                     .addComponent(jLabel10))
-                .addContainerGap(516, Short.MAX_VALUE))
+                .addContainerGap(503, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Entradas", jPanel1);
@@ -269,7 +278,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 0, 0));
         jLabel11.setText("Sorbet de limão");
 
         jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9.jpg"))); // NOI18N
@@ -282,7 +292,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 0, 0));
         jLabel12.setText("Pudim flan");
 
         jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/8.jpg"))); // NOI18N
@@ -292,7 +303,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 0, 0));
         jLabel13.setText("Cheesecake");
 
         jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/11.jpg"))); // NOI18N
@@ -302,7 +314,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 0, 0));
         jLabel14.setText("Mousse de chocolate");
 
         jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/55.jpg"))); // NOI18N
@@ -312,7 +325,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(204, 0, 0));
         jLabel26.setText("Café");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -333,7 +347,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
                         .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -379,7 +393,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jLabel14))
-                .addContainerGap(505, Short.MAX_VALUE))
+                .addContainerGap(492, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sobremesa", jPanel6);
@@ -575,7 +589,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 0, 0));
         jLabel15.setText("Bifinhos com cogumelos");
 
         jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/23.JPG"))); // NOI18N
@@ -585,7 +600,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 0, 0));
         jLabel16.setText("Bitoque");
 
         jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/24.jpg"))); // NOI18N
@@ -596,7 +612,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(204, 0, 0));
         jLabel17.setText("Plumas de porco");
 
         jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/26.jpg"))); // NOI18N
@@ -607,7 +624,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(204, 0, 0));
         jLabel18.setText("Posta mirandesa");
 
         jLabel19.setText("Acompanhamentos: Batata frita, arroz e salada");
@@ -663,7 +681,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel18))
                 .addGap(88, 88, 88)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(326, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Carne", jPanel5);
@@ -675,7 +693,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(204, 0, 0));
         jLabel20.setText("Bacalhau á Lagareiro");
 
         jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/31.jpg"))); // NOI18N
@@ -685,7 +704,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(204, 0, 0));
         jLabel21.setText("Dourada grelhada");
 
         jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/32.jpg"))); // NOI18N
@@ -695,7 +715,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel22.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(204, 0, 0));
         jLabel22.setText("Filetes de peixe");
 
         jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/33.jpg"))); // NOI18N
@@ -705,7 +726,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(204, 0, 0));
         jLabel23.setText("Lulas grelhadas");
 
         jButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/35.jpg"))); // NOI18N
@@ -716,7 +738,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(204, 0, 0));
         jLabel24.setText("Arroz de marisco");
 
         jButton39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/37.jpg"))); // NOI18N
@@ -727,7 +750,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel25.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(204, 0, 0));
         jLabel25.setText("Feijoada de marisco");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -789,7 +813,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel25)
                         .addComponent(jLabel24))
                     .addComponent(jLabel23))
-                .addContainerGap(510, Short.MAX_VALUE))
+                .addContainerGap(497, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Peixe", jPanel4);
@@ -809,10 +833,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("Sopa de Marisco");
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 0, 0));
         jLabel3.setText("Sopa de legumes");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -843,11 +869,13 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addContainerGap(704, Short.MAX_VALUE))
+                .addContainerGap(694, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sopas", jPanel3);
 
+        jTable1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(204, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -860,6 +888,8 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setText("Total:");
 
+        totalTextField.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        totalTextField.setText("€");
         totalTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalTextFieldActionPerformed(evt);
@@ -917,18 +947,17 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(totalTextField))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 520, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 564, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -942,13 +971,13 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(totalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jButton42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton43, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jButton17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1226,7 +1255,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton41ActionPerformed
 
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
-       this.dispose();
+       Fecho frame=new Fecho();
+       frame.setVisible(true);
     }//GEN-LAST:event_jButton43ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

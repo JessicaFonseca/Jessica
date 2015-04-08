@@ -58,16 +58,20 @@ public class Calculadora extends javax.swing.JFrame {
         botao9 = new javax.swing.JButton();
         botao0 = new javax.swing.JButton();
         botaoPonto = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 0, 0));
         jLabel4.setText("Valor:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 0, 0));
         jLabel5.setText("Troco:");
 
+        valorTextField.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         valorTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valorTextFieldActionPerformed(evt);
@@ -75,18 +79,19 @@ public class Calculadora extends javax.swing.JFrame {
         });
 
         trocoTextField.setEditable(false);
+        trocoTextField.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         botaoOK.setBackground(new java.awt.Color(255, 255, 255));
-        botaoOK.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        botaoOK.setForeground(new java.awt.Color(0, 51, 255));
-        botaoOK.setText("OK");
+        botaoOK.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botaoOK.setText("Troco");
         botaoOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoOKActionPerformed(evt);
             }
         });
 
-        botao1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao1.setForeground(new java.awt.Color(204, 0, 0));
         botao1.setText("1");
         botao1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +99,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao2.setForeground(new java.awt.Color(204, 0, 0));
         botao2.setText("2");
         botao2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +108,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao3.setForeground(new java.awt.Color(204, 0, 0));
         botao3.setText("3");
         botao3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +117,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao4.setForeground(new java.awt.Color(204, 0, 0));
         botao4.setText("4");
         botao4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +126,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao5.setForeground(new java.awt.Color(204, 0, 0));
         botao5.setText("5");
         botao5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +135,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao6.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao6.setForeground(new java.awt.Color(204, 0, 0));
         botao6.setText("6");
         botao6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +144,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao7.setForeground(new java.awt.Color(204, 0, 0));
         botao7.setText("7");
         botao7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +153,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao8.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao8.setForeground(new java.awt.Color(204, 0, 0));
         botao8.setText("8");
         botao8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +162,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao9.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao9.setForeground(new java.awt.Color(204, 0, 0));
         botao9.setText("9");
         botao9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +171,8 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botao0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao0.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botao0.setForeground(new java.awt.Color(204, 0, 0));
         botao0.setText("0");
         botao0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,11 +180,21 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        botaoPonto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botaoPonto.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botaoPonto.setForeground(new java.awt.Color(204, 0, 0));
         botaoPonto.setText(".");
         botaoPonto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoPontoActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 0, 0));
+        jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -219,6 +243,10 @@ public class Calculadora extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(196, 196, 196))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,7 +278,9 @@ public class Calculadora extends javax.swing.JFrame {
                     .addComponent(botao9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoPonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(136, 136, 136))
+                .addGap(27, 27, 27)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
 
         pack();
@@ -342,6 +372,10 @@ public class Calculadora extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoPontoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,6 +426,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botao9;
     private javax.swing.JButton botaoOK;
     private javax.swing.JButton botaoPonto;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField trocoTextField;
