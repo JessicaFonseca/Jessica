@@ -628,6 +628,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(204, 0, 0));
         jLabel18.setText("Posta mirandesa");
 
+        jLabel19.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(153, 0, 0));
         jLabel19.setText("Acompanhamentos: Batata frita, arroz e salada");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);

@@ -25,7 +25,7 @@ public class ConexaoDB {
         try {
             System.setProperty("jdbc.Driver",driver);
             cn=DriverManager.getConnection(caminho, user, pass);
-            JOptionPane.showMessageDialog(null,"Conectado com sucesso");
+            //JOptionPane.showMessageDialog(null,"Conectado com sucesso");
         } catch (SQLException ex) {
             Logger.getLogger(ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Erro ao conetar: "+ex);
@@ -101,6 +101,24 @@ else{return false;}
         }
         return rs;
     }
+    
+    public void inserir (String nf, String nome, String morada, String contribuinte){
+        try {
+            String query= "insert into Jessica.Factura values (?,?,?,?)";
+            pst=cn.prepareStatement(query);
+            pst.setString (1, nf);
+            pst.setString (2,nome);
+            pst.setString (3, morada);
+            pst.setString (4, contribuinte);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+
+    
     public ResultSet consulta(String query){
         try {
             st = cn.createStatement();
