@@ -55,13 +55,27 @@ public class Factura extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Facturação", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Vivaldi", 0, 24), new java.awt.Color(204, 0, 0))); // NOI18N
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("Nº Factura");
 
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Nome");
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Morada");
 
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 0, 0));
         jLabel4.setText("Nrº Contribuinte");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(204, 0, 0));
@@ -89,7 +103,7 @@ public class Factura extends javax.swing.JFrame {
                     .addComponent(jTextField2)
                     .addComponent(jTextField3)
                     .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -116,7 +130,7 @@ public class Factura extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(101, 101, 101)
                 .addComponent(jButton1)
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,12 +157,17 @@ public class Factura extends javax.swing.JFrame {
         if (nf.equals("")|| nome.equals("")|| morada.equals("")|| contribuinte.equals("")){
             JOptionPane.showMessageDialog (null, "É obrigatório preencher todos os dados");
         } else {
-            conexao.inserir(nf, nome, morada, contribuinte);
+           
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
         public void setRs(ResultSet rs){
         this.rs=rs;
         }
+        
     /**
      * @param args the command line arguments
      */
