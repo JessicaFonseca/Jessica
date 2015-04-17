@@ -137,7 +137,7 @@ else{return false;}
             pst.setString(2, pass);
             rs=pst.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(Utilitários.ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Utilitarios.ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
     }
